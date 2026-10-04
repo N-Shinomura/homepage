@@ -1,0 +1,28 @@
+# Header block. Leave a field blank ("") to hide it.
+name: Natsuya Shinomura
+positions:
+  - "PhD Candidate, Graduate School of Economics, Hitotsubashi University, Tokyo, Japan"
+  - "Assistant Researcher, Japan Maritime Center, Tokyo, Japan"
+email: natsuya.shinomura@gmail.com
+photo: ""            # e.g. assets/photo.jpg
+cv: ""               # e.g. files/cv.pdf
+fields: "Environmental Economics, Political Economy, Spatial/Trade Economics"
+
+links:
+  - label: Google Scholar
+    url: ""
+  - label: ORCID
+    url: ""
+  - label: GitHub
+    url: https://github.com/N-Shinomura
+
+education:
+  - year: 2026
+    degree: MA in Economics
+    school: "Hitotsubashi University, Tokyo, Japan"
+  - year: 2022
+    degree: MSc in Agricultural Economics
+    school: "University of Reading, Reading, UK"
+  - year: 2021
+    degree: BA in Economics
+    school: "Chuo University, Tokyo, Japan"

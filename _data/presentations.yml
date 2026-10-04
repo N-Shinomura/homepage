@@ -1,0 +1,10 @@
+# Newest first. date: "YYYY-MM". Optional: paper (title presented), url.
+# Entries dated in the future are listed under "Upcoming Presentations",
+# past ones under "Presentations" (decided when the site is rebuilt).
+
+- date: "2026-12"
+  event: "Applied Regional Science Conference 2026"
+- date: "2026-11"
+  event: "20th CESifo Workshop on Political Economy"
+- date: "2026-10"
+  event: "Japan Society of Logistics and Shipping Economics 2026"

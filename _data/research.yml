@@ -1,0 +1,31 @@
+# One section per heading; one entry per paper. Optional fields may be omitted.
+#   title     (required)
+#   authors   coauthors only, e.g. "with A. Author and B. Author"
+#   venue     journal or series
+#   year
+#   pdf       link on the title: local file under files/ or an external URL (DOI etc.)
+#   slides
+#   abstract  shown in a collapsible "Abstract" toggle
+
+- heading: Working Papers
+  papers:
+    - title: "Nip Pollution in the Bud? Public Evaluation of Japan's PFAS Regulation"
+    - title: "Demand for Green Bonds among Individual Investors: Larger and Smaller Returns and the Role of Pro-Social Attitudes"
+      authors: "with Kentaka Aruga"
+    - title: "Does Proximity Internalize Environmental Externalities in Sustainable Finance? Evidence from Hypothetical Municipal SDG Bonds in Japan"
+      authors: "with Kentaka Aruga"
+    - title: "A Comparative Study of Japanese Institutional Investors' Investment Behavior in Sustainability Bonds"
+      authors: "with Arifa Jannat, Kentaka Aruga, and Md. Monirul Islam"
+
+- heading: Publications
+  papers:
+    - title: "Facilitating the Smooth Migration of Inhabitants of Atoll Countries to Artificial Islands: Case of the Maldives"
+      authors: "with Daisuke Sasaki, Akiko Sakamoto, Aishath Laila, Ahmed Aslam, Shuxian Feng, Takuto Kaku, Takumi Sasaki, and Mikiyasu Nakayama"
+      venue: "Sustainability 16(11), 4582"
+      year: 2024
+      pdf: https://doi.org/10.3390/su16114582
+    - title: "Effects of Retail Investors' Environmental Awareness on Their Willingness to Invest in Environmental Bonds"
+      authors: "with Kentaka Aruga"
+      venue: "Conference on Environmental Information Science, Vol. 38"
+      year: 2024
+      pdf: https://www.jstage.jst.go.jp/article/ceispapers/ceis38/0/ceis38_39/_article/-char/en
