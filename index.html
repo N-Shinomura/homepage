@@ -1,0 +1,85 @@
+---
+---
+{%- assign p = site.data.profile -%}
+<!DOCTYPE html>
+<html lang="{{ site.lang }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ p.name }}</title>
+  <meta name="description" content="{{ p.name }} — {{ p.position | strip_html }}">
+  <link rel="stylesheet" href="{{ '/assets/style.css' | relative_url }}">
+</head>
+<body>
+<main>
+
+  <header class="profile">
+    {%- if p.photo != "" %}
+    <img class="photo" src="{{ p.photo | relative_url }}" alt="{{ p.name }}">
+    {%- endif %}
+    <div>
+      <h1>{{ p.name }}</h1>
+      {%- for pos in p.positions %}<p class="meta">{{ pos }}</p>{% endfor %}
+      {%- if p.fields != "" %}<p class="meta fields"><span class="label">Research interests:</span> {{ p.fields }}</p>{% endif %}
+      <p class="links">
+        {%- if p.email != "" %}<a href="mailto:{{ p.email }}">{{ p.email }}</a>{% endif %}
+        {%- if p.cv != "" %}<a href="{{ p.cv | relative_url }}">CV</a>{% endif %}
+        {%- for l in p.links %}{% if l.url != "" %}<a href="{{ l.url }}">{{ l.label }}</a>{% endif %}{% endfor %}
+      </p>
+    </div>
+  </header>
+
+  {%- for s in site.data.research %}
+  {%- if s.papers.size > 0 %}
+  <section>
+    <h2>{{ s.heading }}</h2>
+    <ol class="papers">
+      {%- for x in s.papers %}
+      <li>
+        <span class="title">{% if x.pdf and x.pdf != "" %}<a href="{% if x.pdf contains '://' %}{{ x.pdf }}{% else %}{{ x.pdf | relative_url }}{% endif %}">{{ x.title }}</a>{% else %}{{ x.title }}{% endif %}</span>
+        {%- if x.authors and x.authors != "" %}<span class="authors">{{ x.authors }}</span>{% endif %}
+        {%- if x.venue and x.venue != "" %}<span class="venue">{{ x.venue }}{% if x.year and x.year != "" %}, {{ x.year }}{% endif %}</span>{% endif %}
+        {%- if x.slides and x.slides != "" %}<span class="extra"><a href="{{ x.slides | relative_url }}">Slides</a></span>{% endif %}
+        {%- if x.abstract and x.abstract != "" %}
+        <details><summary>Abstract</summary><p>{{ x.abstract }}</p></details>
+        {%- endif %}
+      </li>
+      {%- endfor %}
+    </ol>
+  </section>
+  {%- endif %}
+  {%- endfor %}
+
+  {%- assign now = site.time | date: "%Y-%m" %}
+  {%- assign upcoming = site.data.presentations | where_exp: "t", "t.date >= now" %}
+  {%- assign past = site.data.presentations | where_exp: "t", "t.date < now" %}
+  {%- for group in (1..2) %}
+  {%- if group == 1 %}{% assign talks = upcoming %}{% assign heading = "Upcoming Presentations" %}
+  {%- else %}{% assign talks = past %}{% assign heading = "Presentations" %}{% endif %}
+  {%- if talks.size > 0 %}
+  <section>
+    <h2>{{ heading }}</h2>
+    <ul class="dated">
+      {%- for t in talks %}
+      <li><span class="when">{{ t.date | append: "-01" | date: "%b %Y" }}</span><span>{% if t.url %}<a href="{{ t.url }}">{{ t.event }}</a>{% else %}{{ t.event }}{% endif %}{% if t.paper %}<span class="sub">{{ t.paper }}</span>{% endif %}</span></li>
+      {%- endfor %}
+    </ul>
+  </section>
+  {%- endif %}
+  {%- endfor %}
+
+  {%- if p.education.size > 0 %}
+  <section>
+    <h2>Education</h2>
+    <ul class="dated">
+      {%- for e in p.education %}
+      <li><span class="when">{{ e.year }}</span><span>{{ e.degree }}<span class="sub">{{ e.school }}</span></span></li>
+      {%- endfor %}
+    </ul>
+  </section>
+  {%- endif %}
+
+  <footer>Last updated {{ site.time | date: "%B %Y" }}</footer>
+</main>
+</body>
+</html>
