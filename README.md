@@ -1,6 +1,6 @@
-# n-shinomura.github.io
+# homepage
 
-Single-page academic site, built by GitHub Pages (Jekyll) on push to `main`.
+Single-page academic site at https://n-shinomura.github.io/homepage/, built by GitHub Pages (Jekyll) on push to `main`.
 
 - `_data/profile.yml` — name, positions, interests, links, education
 - `_data/research.yml` — papers by section

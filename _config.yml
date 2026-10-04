@@ -1,5 +1,6 @@
 title: Natsuya Shinomura
 description: Economist
 lang: en
+baseurl: /homepage   # repo name; site is served at n-shinomura.github.io/homepage/
 exclude:
   - README.md
